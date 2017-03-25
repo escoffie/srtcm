@@ -89,6 +89,21 @@ class Dashboard_model extends Model {
 		$this->db->next_result();
 		return $arreglo;
 	}
+//20170313 funciom que devuelve el codigo de la familia
+function familiaSubfami($codeSub){
+
+		$resultado = $this->db->query('SELECT codigo_fam FROM subfamilias_sub where codigo_sub = "'.$codeSub.'"');
+		if($resultado->num_rows>0){
+				while($row = $resultado->fetch_assoc()){
+					$mensaje = $row['codigo_fam'];
+					}
+				}else{
+					$mensaje = "";
+					}
+					
+					return $mensaje;
+		return $mensaje;
+	}
 
 	/* 
 	* subfamiliasPorFamiliaPorProveedor()
@@ -100,8 +115,10 @@ class Dashboard_model extends Model {
 		// Si hay un código de proveedor, busca las subfamilias donde ese proveedor tiene participación
 		// Si no (es decir, si es cuenta MASTER), devuelve todas las subfamilias de la familia pasada como parámetro
 		if($codigo_pro>0)
-			$resultado = $this->db->query('CALL subfamiliasPorFamiliaPorProveedor('.$codigo_fam.','.$codigo_pro.');');
-		else 
+			//2402017 asunza se cambio esta linea a peticion del ingeniero medina 
+			//$resultado = $this->db->query('CALL subfamiliasPorFamiliaPorProveedor('.$codigo_fam.','.$codigo_pro.');');
+			$resultado = $this->db->query('CALL SUBFAMPROVE2('.$codigo_pro.');');
+		else
 			$resultado = $this->db->query('CALL subfamiliasPorFamilia('.$codigo_fam.');');
 		if($resultado->num_rows>0){
 			while($row = $resultado->fetch_assoc()){
@@ -137,10 +154,13 @@ class Dashboard_model extends Model {
 			$data_actual=array();
 			$i=0;
 			while($row = $resultado->fetch_assoc()){
-				$c = $row['codigo_pro'];
+				$c = $row['codigo_pro']; 
 				$p = $this->ocultarNombreParaNivelUno($c, $row['Proveedor'], '[Competidor '.$i.' periodo actual]');
 				$v = floatval($row['ventas']);
-				$c = '<span class="hidden>"'.$i.'</span><i class="fa fa-square"></i> <button type="button" data-nombrepro="'.$p.'" data-codigopro="'.$c.'" data-fechaini="'.$fecha_desde.'" data-fechafin="'.$fecha_hasta.'"><i class="fa fa-th-list"> </i> Ver más</button>';
+				
+				$c = '<span class="hidden>"'.$i.'</span><i class="fa fa-square">';
+				/*17022017 se oculto a peticipon de l ing. medina
+				</i> <button type="button" data-nombrepro="'.$p.'" data-codigopro="'.$c.'" data-fechaini="'.$fecha_desde.'" data-fechafin="'.$fecha_hasta.'"><i class="fa fa-th-list"> </i> Ver más</button>';*/
 				$i++;
 				array_push(
 					$data_actual,
@@ -153,11 +173,11 @@ class Dashboard_model extends Model {
 				$periodo_actual['tabla'][] = array($c, $p, $v, $v);
 			}
 			foreach($data_actual as $key => $item){
-				$data_actual[$key]['value'] = round($item['value']*100/$cienporciento,1);	
+				$data_actual[$key]['value'] = round($item['value']*100/$cienporciento,2);	
 			}
 			foreach($periodo_actual['tabla'] as $key => $value){
 				$periodo_actual['tabla'][$key][2] = '$ '.money_format($value[2], 2);
-				$periodo_actual['tabla'][$key][3] = round($value[2]*100/$cienporciento,1).'%';
+				$periodo_actual['tabla'][$key][3] = number_format(round($value[3]*100/$cienporciento,2),2,'.','').'%';
 			}
 		}
 		
@@ -181,7 +201,9 @@ class Dashboard_model extends Model {
 				$c = $row['codigo_pro'];
 				$p = $this->ocultarNombreParaNivelUno($c, $row['Proveedor'], '[Competidor '.$i.' periodo anterior]');
 				$v = floatval($row['ventas']);
-				$c = '<span class="hidden>"'.$i.'</span><i class="fa fa-square"></i> <button type="button" data-nombrepro="'.$p.'" data-codigopro="'.$c.'" data-fechaini="'.$fecha_desde.'" data-fechafin="'.$fecha_hasta.'"><i class="fa fa-th-list"> </i> Ver más</button>';
+				$c = '<span class="hidden>"'.$i.'</span><i class="fa fa-square">';
+				/*17022017 se oculto a peticipon de l ing. medina
+				</i> <button type="button" data-nombrepro="'.$p.'" data-codigopro="'.$c.'" data-fechaini="'.$fecha_desde.'" data-fechafin="'.$fecha_hasta.'"><i class="fa fa-th-list"> </i> Ver más</button>';*/
 				$i++;
 				array_push(
 					$data_anterior,
@@ -194,11 +216,11 @@ class Dashboard_model extends Model {
 				$periodo_anterior['tabla'][] = array($c, $p, $v, $v);
 			}
 			foreach($data_anterior as $key => $item){
-				$data_anterior[$key]['value'] = round($item['value']*100/$cienporciento,1);	
+				$data_anterior[$key]['value'] = round($item['value']*100/$cienporciento,2);	
 			}
 			foreach($periodo_anterior['tabla'] as $key => $value){
 				$periodo_anterior['tabla'][$key][2] = '$ '.money_format($value[2], 2);
-				$periodo_anterior['tabla'][$key][3] = round($value[2]*100/$cienporciento,1).'%';
+				$periodo_anterior['tabla'][$key][3] = number_format(round($value[2]*100/$cienporciento,2),2,'.','').'%';
 			}
 		}
 		$resultado->close();
@@ -214,6 +236,42 @@ class Dashboard_model extends Model {
 		return ($arreglo);
 
 	}
+	
+	
+	//20170311 asunza se agrego la funcio para el mensaje del pie de pagina
+	function mensajepie(){
+			$mensaje = "";
+			$resultado = $this->db->query("select * from piepagina_pie");
+			if($resultado->num_rows>0){
+				$row = $resultado->fetch_assoc();
+					$mensaje = $row['mensaje'];
+			
+				}else{
+					$mensaje = "";
+					}
+					
+					return $mensaje;
+		}
+	
+	
+	//20170311 asunza guarda el nombre de la imagen del proveedor
+	function updateImgProve($nombre,$texto){
+			$this->db->query("UPDATE proveedores_pro SET avatar_pro = '".$nombre."' WHERE codigo_pro='".$texto."'");
+		}
+		
+	//20170311 asunza obtiene la imagen del proveedor
+	function traerImagen($parametro){
+			$resultado = $this->db->query("SELECT avatar_pro FROM proveedores_pro where codigo_pro = '".$parametro."';");
+			if($resultado->num_rows>0){
+				$row = $resultado->fetch_assoc();
+					$mensaje = $row['avatar_pro'];
+
+				}else{
+					$mensaje = "";
+					}
+					
+					return $mensaje;
+		}
 	
 	/*
 	* fechasParaDateRangePicker()
@@ -326,16 +384,22 @@ class Dashboard_model extends Model {
 		if($resultado->num_rows>0){
 			$i=0;
 			while($row = $resultado->fetch_assoc()){
+				if((float)($row['suma_actual'])>0 and (float)($row['suma_anterior'])>0)
+				$diferencia = ((float)($row['suma_actual'] - (float)$row['suma_anterior']))/(float)$row['suma_anterior']*100;//17022017 asunza se agrego por peticion del ingeniero medina
+				else if((float)($row['suma_anterior'])==0) $diferencia = 100;//17022017 asunza se agrego por peticion del ingeniero medina
+				else if((float)($row['suma_actual'])==0) $diferencia = -100;//17022017 asunza se agrego por peticion del ingeniero medina
+				$row['variacion'] = round($diferencia,2);//17022017 asunza se agrego por peticion del ingeniero medina
 				$row['suma_actual'] = (float)$row['suma_actual'];
 				$row['suma_anterior'] = (float)$row['suma_anterior'];
-				$row['proveedor'] = $this->ocultarNombreParaNivelUno($row['codigo_pro'], $row['proveedor'], "[Competidor $i]");
+				$x = explode(' ',$row['proveedor']);
+				$row['proveedor'] = $this->ocultarNombreParaNivelUno($row['codigo_pro'], $x[0].' '.$x[1].' '.$x[2], "[Competidor $i]");
 				$arreglo[] = $row;
 				$i++;
 			}
 		}
 		return $arreglo;
 	}
-	
+
 	function comparativoDropdown(){
 		extract($_SESSION['filtro']);
 		$codigo_pro = $_SESSION['usuario']['codigo_pro'];
@@ -355,13 +419,17 @@ class Dashboard_model extends Model {
 	
 	function comparativoDataMorris($codigo_pro=''){
 		extract($_SESSION['filtro']);
-		$resultado = $this->db->query("CALL productosPorProveedor($codigo_fam, $codigo_sub, $codigo_pro, '$fechaA_desde', '$fechaA_hasta', '$where_sucursales')");
+		$resultado = $this->db->query("CALL productosPorProveedorDos($codigo_fam, $codigo_sub, $codigo_pro, '$fechaA_desde', '$fechaA_hasta', '$where_sucursales')");
+		//$resultado = $this->db->query("CALL productosPorProveedor($codigo_fam, $codigo_sub, $codigo_pro, '$fechaA_desde', '$fechaA_hasta', '$where_sucursales')");
+
+
 		if($resultado->num_rows>0){
+				
 			$i=1;
 			while($row = $resultado->fetch_assoc()){
 				$productos[] = array(
 					'label' => $this->ocultarNombreParaNivelUno($codigo_pro, $row['articulo'], "[Artículo $i]"). ' ' .$row['capacidad']. ' ' .$row['unidad'],
-					'value' => $row['cantidad'],
+					'value' => $row['porcentaje'],
 				);
 				$i++;
 				
@@ -377,12 +445,22 @@ class Dashboard_model extends Model {
 	function comparativoDataTable($codigo_pro=''){
 		extract($_SESSION['filtro']);
 		if(empty($codigo_pro)) $codigo_pro=0;
-		$resultado = $this->db->query("CALL productosPorProveedorPorFecha($codigo_fam, $codigo_sub, $codigo_pro, '$fechaA_desde', '$fechaA_hasta', '$where_sucursales')");
+		$resultado = $this->db->query("CALL productosPorProveedorDos($codigo_fam, $codigo_sub, $codigo_pro, '$fechaA_desde', '$fechaA_hasta', '$where_sucursales')");
+		//$resultado = $this->db->query("CALL productosPorProveedorPorFecha($codigo_fam, $codigo_sub, $codigo_pro, '$fechaA_desde', '$fechaA_hasta', '$where_sucursales')");
 		if($resultado->num_rows>0){
 			$i=0;
-			while($row = $resultado->fetch_assoc()){
+			/*while($row = $resultado->fetch_assoc()){
 				$productos[$i] = array(
 					date('d/m/Y', strtotime($row['fecha'])),
+					$this->ocultarNombreParaNivelUno($codigo_pro, $row['codigodebarra'], "[Código de barra $i]"),
+					$this->ocultarNombreParaNivelUno($codigo_pro, $row['articulo'], "[Artículo $i]"),
+					$row['capacidad'].' '.$row['unidad'],
+					$row['cantidad'],
+					$this->moneda($row['monto']),
+				);*/
+				
+				while($row = $resultado->fetch_assoc()){
+				$productos[$i] = array(
 					$this->ocultarNombreParaNivelUno($codigo_pro, $row['codigodebarra'], "[Código de barra $i]"),
 					$this->ocultarNombreParaNivelUno($codigo_pro, $row['articulo'], "[Artículo $i]"),
 					$row['capacidad'].' '.$row['unidad'],
@@ -407,7 +485,7 @@ class Dashboard_model extends Model {
 			}
 			$respuesta['sucursales']=implode(', ', $respuesta['sucursales']);
 		}
-		
+
 		$fam = $this->db->query("SELECT a.nombre_fam AS familia, b.nombre_sub AS subfamilia FROM familias_fam AS a JOIN subfamilias_sub AS b USING(codigo_fam) WHERE b.codigo_fam=".$_SESSION['filtro']['codigo_fam']." AND b.codigo_sub=".$_SESSION['filtro']['codigo_sub']);
 		if($fam->num_rows>0){
 			while($row = $fam->fetch_assoc()){
@@ -478,5 +556,14 @@ class Dashboard_model extends Model {
 	public function moneda($numero){
 		return "$ ". number_format($numero, 2, '.', ',');
 	}
+	
 
+}
+
+// 17022017 asunza
+// se agrego esta funcion ya que en el ambiente test en una maquina windows no se puede acceder ala funcion money_format, el cual es una funcion de sistema operativo el cual linux si tiene. 
+if (!function_exists('money_format')) {
+	function money_format($numero,$i){
+		return number_format($numero,$i,'.',',');
+		}
 }
