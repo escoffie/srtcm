@@ -13,10 +13,10 @@
 <file name="xcrud_container.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130349016680000000" remote="131167016090000000" Dst="2" />
 <file name="xcrud_detail_view.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130469111230000000" remote="131167016100000000" Dst="2" />
 <file name="xcrud_list_view.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130469112390000000" remote="131167016100000000" Dst="2" />
-<file name="loading.gif" server="ftp.surticoma.com/public_html/" local="130312733310000000" remote="131166967200000000" Dst="2" />
-<file name="xcrud.css" server="ftp.surticoma.com/public_html/" local="130543440780000000" remote="131167006200000000" Dst="2" />
-<file name="xcrud.ini" server="ftp.surticoma.com/public_html/" local="130469111090000000" remote="131167006200000000" Dst="2" />
-<file name="xcrud_container.php" server="ftp.surticoma.com/public_html/" local="130349016680000000" remote="131167006200000000" Dst="2" />
-<file name="xcrud_detail_view.php" server="ftp.surticoma.com/public_html/" local="130469111230000000" remote="131167006200000000" Dst="2" />
-<file name="xcrud_list_view.php" server="ftp.surticoma.com/public_html/" local="130469112390000000" remote="131167006200000000" Dst="2" />
+<file name="loading.gif" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="xcrud.css" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="xcrud.ini" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="xcrud_container.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="xcrud_detail_view.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="xcrud_list_view.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

@@ -68,6 +68,7 @@ $contenido->label(array(
 $contenido->readonly('cod_lang,creationdate,creationtime,editdate,edittime,promocion,', 'edit');
 
 $fotografias = $contenido->nested_table('Fotografias', 'cod_child', 'files', 'cod_child');
+$fotografias->connection('surticom_admin', 'Racatapulfuf1?', 'surticom_think', 'localhost', 'utf8');
 $fotografias->table_name('Imágenes', 'Colección de imágenes vinculadas a la publicación', 'icon-gift');
 $fotografias->columns('url_file, aux1');
 $fotografias->fields('url_file, aux1');

@@ -16,10 +16,10 @@
 <file name="xcrud_ajax.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130500211030000000" remote="131167016260000000" Dst="2" />
 <file name="xcrud_config.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131135855250000000" remote="131167016270000000" Dst="2" />
 <file name="xcrud_db.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130711855740000000" remote="131167016270000000" Dst="2" />
-<file name="functions.php" server="ftp.surticoma.com/public_html/" local="131148065310000000" remote="131166967200000000" Dst="2" />
-<file name="index.html" server="ftp.surticoma.com/public_html/" local="129945611380000000" remote="131166967200000000" Dst="2" />
-<file name="xcrud_ajax.php" server="ftp.surticoma.com/public_html/" local="130500211030000000" remote="131166967200000000" Dst="2" />
-<file name="xcrud.php" server="ftp.surticoma.com/public_html/" local="130716150430000000" remote="131167006200000000" Dst="2" />
+<file name="functions.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="index.html" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="xcrud_ajax.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="xcrud.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 <file name="xcrud_config.php" server="ftp.surticoma.com/public_html/" local="131193844058593461" remote="131193771600000000" Dst="2" />
-<file name="xcrud_db.php" server="ftp.surticoma.com/public_html/" local="130711855740000000" remote="131167006200000000" Dst="2" />
+<file name="xcrud_db.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>
