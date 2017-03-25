@@ -6,6 +6,6 @@
 <file name="functions" server="104.244.125.178/public_html/" local="130382692260000000" remote="131123752200000000" Dst="2" />
 <file name="config" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167005930000000" Dst="2" />
 <file name="functions" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167005940000000" Dst="2" />
-<file name="functions" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166963600000000" Dst="2" />
-<file name="config" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166973200000000" Dst="2" />
+<file name="functions" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="config" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

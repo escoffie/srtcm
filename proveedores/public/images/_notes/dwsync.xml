@@ -7,7 +7,8 @@
 <file name="logo.png" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131135912520000000" remote="131167014130000000" Dst="2" />
 <file name="logos.png" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131135300880000000" remote="131167014160000000" Dst="2" />
 <file name="spinner.gif" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131104888430000000" remote="131167014170000000" Dst="2" />
-<file name="logos.png" server="ftp.surticoma.com/public_html/" local="131135300880000000" remote="131166967200000000" Dst="2" />
-<file name="logo.png" server="ftp.surticoma.com/public_html/" local="131135912520000000" remote="131167003800000000" Dst="2" />
-<file name="spinner.gif" server="ftp.surticoma.com/public_html/" local="131104888430000000" remote="131167003800000000" Dst="2" />
+<file name="logos.png" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="logo.png" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="spinner.gif" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="user.png" server="ftp.surticoma.com/public_html/" local="131337463800000000" remote="131337463800000000" Dst="1" />
 </dwsync>

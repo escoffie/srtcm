@@ -1,0 +1,4 @@
+﻿proveedores/csv/*
+proveedores/config.php
+proveedores/.htaccess
+xcrud/xcrud_config.php

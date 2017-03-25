@@ -24,12 +24,12 @@
 <file name="ip-address.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167010060000000" Dst="2" />
 <file name="num-html.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167010060000000" Dst="2" />
 <file name="numeric-comma.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167010070000000" Dst="2" />
-<file name="currency.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167000200000000" Dst="2" />
-<file name="date-uk.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167000200000000" Dst="2" />
-<file name="file-size.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167000200000000" Dst="2" />
-<file name="formatted-num.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167000200000000" Dst="2" />
-<file name="index.html" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167000200000000" Dst="2" />
-<file name="ip-address.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167000200000000" Dst="2" />
-<file name="num-html.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167000200000000" Dst="2" />
-<file name="numeric-comma.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167000200000000" Dst="2" />
+<file name="currency.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="date-uk.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="file-size.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="formatted-num.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="index.html" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="ip-address.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="num-html.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="numeric-comma.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

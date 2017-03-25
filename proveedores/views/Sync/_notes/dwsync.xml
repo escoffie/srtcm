@@ -6,7 +6,7 @@
 <file name="listarArchivos.php" server="104.244.125.178/public_html/" local="131122246035107335" remote="131123754600000000" Dst="2" />
 <file name="index.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131122236300000000" remote="131167014640000000" Dst="2" />
 <file name="listarArchivos.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131122246030000000" remote="131167014650000000" Dst="2" />
-<file name="listarArchivos.php" server="ftp.surticoma.com/public_html/" local="131183422529636390" remote="131183350200000000" Dst="2" />
-<file name="index.php" server="ftp.surticoma.com/public_html/" local="131122236300000000" remote="131167004400000000" Dst="2" />
-<file name="listarArchivosRemotos.php" server="ftp.surticoma.com/public_html/" local="131188983406469430" remote="131188911000000000" Dst="2" />
+<file name="listarArchivos.php" server="ftp.surticoma.com/public_html/" local="131183064000000000" remote="131183064000000000" Dst="1" />
+<file name="index.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="listarArchivosRemotos.php" server="ftp.surticoma.com/public_html/" local="131188248000000000" remote="131188248000000000" Dst="1" />
 </dwsync>

@@ -37,14 +37,14 @@
 <file name="Sync_submenu.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131122257580000000" remote="131167014510000000" Dst="2" />
 <file name="zopim.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131134177290000000" remote="131167014520000000" Dst="2" />
 <file name="Dashboard_footer.php" server="ftp.surticoma.com/public_html/proveedores/" local="131167021839384069" remote="131166949800000000" Dst="2" />
-<file name="Dashboard_footer.php" server="ftp.surticoma.com/public_html/" local="131167021839384069" remote="131166953400000000" Dst="2" />
-<file name="Dashboard_filtro.php" server="ftp.surticoma.com/public_html/" local="131149081760000000" remote="131166967200000000" Dst="2" />
-<file name="Dashboard_header.php" server="ftp.surticoma.com/public_html/" local="131148415630000000" remote="131166967200000000" Dst="2" />
-<file name="Index_signIn.php" server="ftp.surticoma.com/public_html/" local="131136023500000000" remote="131166967200000000" Dst="2" />
-<file name="Sync_submenu.php" server="ftp.surticoma.com/public_html/" local="131122257580000000" remote="131166967200000000" Dst="2" />
-<file name="analyticstracking.php" server="ftp.surticoma.com/public_html/" local="131097391150000000" remote="131167003800000000" Dst="2" />
-<file name="Index_footer.php" server="ftp.surticoma.com/public_html/" local="131148820410000000" remote="131167004400000000" Dst="2" />
-<file name="Index_header.php" server="ftp.surticoma.com/public_html/" local="131134178130000000" remote="131167004400000000" Dst="2" />
-<file name="Index_signUp.php" server="ftp.surticoma.com/public_html/" local="131070965470000000" remote="131167004400000000" Dst="2" />
-<file name="zopim.php" server="ftp.surticoma.com/public_html/" local="131169696097295071" remote="131170417200000000" Dst="2" />
+<file name="Dashboard_footer.php" server="ftp.surticoma.com/public_html/" local="131347872600000000" remote="131347872600000000" Dst="1" />
+<file name="Dashboard_filtro.php" server="ftp.surticoma.com/public_html/" local="131346694800000000" remote="131346694800000000" Dst="1" />
+<file name="Dashboard_header.php" server="ftp.surticoma.com/public_html/" local="131347880400000000" remote="131347880400000000" Dst="1" />
+<file name="Index_signIn.php" server="ftp.surticoma.com/public_html/" local="131336593200000000" remote="131336593200000000" Dst="1" />
+<file name="Sync_submenu.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="analyticstracking.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="Index_footer.php" server="ftp.surticoma.com/public_html/" local="131332921200000000" remote="131332921200000000" Dst="1" />
+<file name="Index_header.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="Index_signUp.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="zopim.php" server="ftp.surticoma.com/public_html/" local="131170104000000000" remote="131170104000000000" Dst="1" />
 </dwsync>

@@ -1,4 +1,10 @@
 <?php require ('./public/php/Dashboard_header.php'); ?>
+<div class="row divControles" align="left">
+    <div class="col-md-12">
+            <a id="ocultarP" class="hidePanelShow" title="Ocultar Panel lateral"><i class="fa fa-fast-backward fa-fw"></i></a>
+            <a id="mostrarP" class="hidePanelShow" title="Mostrar Panel lateral"><i class="fa fa-fast-forward fa-fw"></i></a>
+    </div>
+</div>
 
 <div>
 	<div class="row">
@@ -12,8 +18,8 @@
   <!-- Nav tabs -->
   <ul class="nav nav-tabs" role="tablist">
     <li role="presentation" class="active"><a href="#market-share" aria-controls="market-share" role="tab" data-toggle="tab"><i class="fa fa-pie-chart"></i> Market Share</a></li>
-    <li role="presentation"><a href="#venta-por-dia" aria-controls="venta-por-dia" role="tab" data-toggle="tab"><i class="fa fa-line-chart"></i> Venta por día</a></li>
-    <li role="presentation"><a href="#comparativo" aria-controls="comparativo" role="tab" data-toggle="tab"><i class="fa fa-balance-scale"></i> Comparativo</a></li>
+    <li role="presentation"><a href="#comparativo" aria-controls="comparativo" role="tab" data-toggle="tab"><i class="fa fa-balance-scale"></i> Comparativo</a></li><!--16022017 asunza se invirtio el orden de estas 2 pestañas (comparativo y venta por día.) por silicitud del ingeniero medina -->
+     <li role="presentation"><a href="#venta-por-dia" aria-controls="venta-por-dia" role="tab" data-toggle="tab"><i class="fa fa-line-chart"></i> Venta por día</a></li>
     <li role="presentation"><a href="#perfil" aria-controls="perfil" role="tab" data-toggle="tab"><i class="fa fa-cog"></i> Perfil de usuario</a></li>
     <?php if(DEBUG==true){ ?>
     <li role="presentation"><a href="#dev" aria-controls="dev" role="tab" data-toggle="tab">DEV</a></li>
@@ -131,45 +137,12 @@
           </div>
         </div>
     </div>
-    <!-- SEGUNDO ANÁLISIS: GRÁFICO DE LÍNEAS / VENTAS POR DÍA -->
+    <!-- SEGUNDO ANÁLISIS: GRÁFICO DE BARRAS / VENTAS POR DÍA -->
     <div role="tabpanel" class="tab-pane" id="venta-por-dia">
         <div class="row">
             <div class="col-md-12 text-center">
                 <h2>Ventas por día contra competidores</h2>
             </div>
-        </div>
-        
-        <div class="row">
-            <div class="col-md-6">
-                <div class="panel panel-default" id="morris-3-panel">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Periodo anterior</h3>
-                  </div>
-                  <div class="panel-body">
-                    <div id="morris-3-fechas" class="text-center"></div>
-                    <div id="morris-3" class="redibuja-morris"></div>
-                  </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="panel panel-default" id="morris-4-panel">
-                  <div class="panel-heading">
-                    <h3 class="panel-title">Periodo seleccionado</h3>
-                  </div>
-                  <div class="panel-body">
-                    <div id="morris-4-fechas" class="text-center"></div>
-                    <div id="morris-4" class="redibuja-morris"></div>
-                  </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="row">
-          <div class="col-md-12">
-                <div class="row" id="histograma">
-                </div>
-        
-          </div>
         </div>
         
         <div class="row">
@@ -194,6 +167,42 @@
                 <div id="morris-barras-tabla"></div>
             </div>
         </div>
+        
+        <!--inicia grafica de lineas 17022017 asunza se oculto a peticion del ingeniero medina style="display:none;"--> 
+        <div class="row" style="display:none;">
+            <div class="col-md-6">
+                <div class="panel panel-default" id="morris-3-panel">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Periodo anterior</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div id="morris-3-fechas" class="text-center"></div>
+                    <div id="morris-3" class="redibuja-morris"></div>
+                  </div>
+                </div>
+            </div>
+            <div class="col-md-6" style="display:none;">
+                <div class="panel panel-default" id="morris-4-panel">
+                  <div class="panel-heading">
+                    <h3 class="panel-title">Periodo seleccionado</h3>
+                  </div>
+                  <div class="panel-body">
+                    <div id="morris-4-fechas" class="text-center"></div>
+                    <div id="morris-4" class="redibuja-morris"></div>
+                  </div>
+                </div>
+            </div>
+        </div>
+        <!-- termina grafica de lineas-->
+        <div class="row">  
+          <div class="col-md-12">
+                <div class="row" id="histograma">
+                </div>
+        
+          </div>
+        </div>
+        
+        
         
     </div>
     <!-- TERCER ANÁLISIS: COMPARATIVO POR PRODUCTOS -->

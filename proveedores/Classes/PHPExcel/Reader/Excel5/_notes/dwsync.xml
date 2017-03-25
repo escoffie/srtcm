@@ -9,7 +9,7 @@
 <file name="Escher.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167006180000000" Dst="2" />
 <file name="MD5.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167006180000000" Dst="2" />
 <file name="RC4.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167006190000000" Dst="2" />
-<file name="MD5.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166963600000000" Dst="2" />
-<file name="RC4.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166963600000000" Dst="2" />
-<file name="Escher.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166973200000000" Dst="2" />
+<file name="MD5.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="RC4.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="Escher.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

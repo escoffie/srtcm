@@ -18,10 +18,10 @@
 <file name="DefaultValueBinder.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167005390000000" Dst="2" />
 <file name="Hyperlink.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167005400000000" Dst="2" />
 <file name="IValueBinder.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167005400000000" Dst="2" />
-<file name="DataType.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166963000000000" Dst="2" />
-<file name="DataValidation.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166963000000000" Dst="2" />
-<file name="DefaultValueBinder.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166963000000000" Dst="2" />
-<file name="Hyperlink.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166963000000000" Dst="2" />
-<file name="IValueBinder.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166963600000000" Dst="2" />
-<file name="AdvancedValueBinder.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166964200000000" Dst="2" />
+<file name="DataType.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="DataValidation.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="DefaultValueBinder.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="Hyperlink.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="IValueBinder.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="AdvancedValueBinder.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

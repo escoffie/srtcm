@@ -1,6 +1,7 @@
 // JavaScript que se ejecuta al cargarse el DOM
 
 $(document).ready(function(){
+	
 	"use strict";
 	
 	// Sincronización manual
@@ -88,7 +89,10 @@ $(document).ready(function(){
 	
 	// Asigna el valor de "id_niv" en el filtro con base al valor más bajo de las sucursales seleccionadas en los checkboxes
 	
-	var asignarNivel = function(){
+	/*
+	20170314 asunza: a solicitud del ingeniero medina se ha deshabilitado esta funcion que muestra el nivel de acceso aun lado del nombre del proveedor logeado. */
+	
+/*	var asignarNivel = function(){
 		
 		var id_nivs=[];
 		var _nivel;
@@ -125,9 +129,42 @@ $(document).ready(function(){
 	
 	asignarNivel();
 	
-	$('.check_sucursales').change(asignarNivel);
+	$('.check_sucursales').change(asignarNivel);*/
 
 	
+	$(document).on('change click','.selectpicker',function(){
+			var id_nivs=[];
+		var _nivel;
+		var nivel;
+		var prependLabel;
+		
+		if($('.selectpicker option:selected').length>0) {
+		
+			$('.selectpicker option:selected').each(function(index, element) {
+				_nivel = $(element).data('nivel');
+				if(nivel!==""){
+					id_nivs.push( _nivel );
+				}
+				nivel = Math.min.apply(Math,id_nivs);
+				if(nivel===Infinity){
+					nivel=1;	
+				}
+				$('#id_niv').val(nivel);
+				
+				if(nivel===1){
+					prependLabel = '<span class="label label-warning hidden" id="prepend-label">Básico</span>';
+				} else if (nivel===2){
+					prependLabel = '<span class="label label-success hidden" id="prepend-label">Premium</span>';	
+				}
+				$('#prepend-label').remove();
+				$('#nombre_de_usuario').prepend(prependLabel);
+			});
+		
+		} else {
+			$('#prepend-label').remove();
+		}
+	});
+
 	// Javascript to enable link to tab
 	var url = document.location.toString();
 	var hashmodificado = '';
@@ -146,11 +183,23 @@ $(document).ready(function(){
 	$('.equal-height-panels .panel').matchHeight();
 	
 	// Subfamilias del filtro (selects dependientes) al cargar y al cambiar el select de familias
-	obtenerSubfamilias($('#codigo_fam').val());	
 	
-	$('#codigo_fam').on("click change", this, function(){
-		obtenerSubfamilias($(this).val());	
-	});
+	//20170314 asunza cambios para englobar las categorias cuando se acceda como proveedor y dejar el sistema como estaba antes cuando se acceda como master, para elegir las familias y de ahi posteriormente seleccionar la subfamilia.
+
+obtenerSubfamilias($("#codigo_fam").val());	
+
+	if(constantes.codigo_pro==0){
+		$('#codigo_fam').on("change", this, function(){
+			obtenerSubfamilias($(this).val());	
+		});
+		
+		}else{	
+				obtenerfamiliasDos($('#codigo_sub').val());				
+				$('#codigo_sub').on("change", this, function(){
+					obtenerfamiliasDos($(this).val());	
+				});
+			}
+	
 	
 	// Botón del filtro
 	$('#gui_btn_filtro').click(function(e){
@@ -162,12 +211,30 @@ $(document).ready(function(){
 		
 		//Validación
 		var error_filtro = '';
-		if($(".check_sucursales:checkbox:checked").length == 0){
+		/*if($(".check_sucursales:checkbox:checked").length == 0){
 			error_filtro += '<p>Seleccione al menos una sucursal.</p>';
 		}
-		if($("#codigo_fam").val()==='0'){
-			error_filtro += '<p>Seleccione una familia.</p>';
+		*/
+		if($(".selectpicker").val() == null){
+			error_filtro += '<p>Seleccione al menos una sucursal.</p>';
 		}
+		
+		
+		if(constantes.codigo_pro > 0){
+			if($("#codigo_sub").val()==='' && $("#codigo_fam").val()==='0'){
+					error_filtro += '<p>Seleccione una categoría.</p>';
+				}
+			
+			}
+		
+		if(constantes.codigo_pro == 0){
+			if($("#codigo_fam").val()==='0'){
+				error_filtro += '<p>Seleccione una familia.</p>';
+			}
+		}/*else{
+				error_filtro += '<p>Seleccione una categoría.</p>';
+			}*/
+		
 		if(error_filtro!==''){
 			bootbox.dialog({
 				'title':'Verifique los siguientes errores', 
@@ -181,6 +248,7 @@ $(document).ready(function(){
 			});
 		} else {
 			//AJAX si no hay errores
+			//obtenerfamiliasDos($('#codigo_sub').val());	
 			var _post = $("#gui_form_filtro").serialize();
 			$.ajax({
 				type:'post',
@@ -199,7 +267,7 @@ $(document).ready(function(){
 					
 					// Relacionado con el TOUR
 					$('a[aria-controls="market-share"]').tab('show');
-					tour.next();
+					//tour.next();
 
 				},
 			}).retry({times:3, timeout:1000, statusCodes:[500,503,504]});
@@ -210,8 +278,8 @@ $(document).ready(function(){
 		if(sessionData==1){
 			$("#monitorFiltro").html('').append('<div class="alert alert-warning"><strong>Cargando.</strong> Por favor, espere...</div>');
 			$("#market-share").LoadingOverlay("show");
-			$("#venta-por-dia").LoadingOverlay("show");
 			$("#comparativo").LoadingOverlay("show");
+			$("#venta-por-dia").LoadingOverlay("show");
 			totalesPorPeriodo();
 			histograma();
 			sesionMonitor();
@@ -264,7 +332,7 @@ $(document).ready(function(){
 	var M2 = Morris.Donut({
 		element:'morris-2',
 		data:[{label:'Aplique un filtro para ver los datos',value:0}],
-		formatter: function (y, datos) { return y + '%'; },
+		formatter: function (y, datos) { return parseFloat(y).toFixed(2) + '%'; },
 		resize:true,
 		colors:colores,
 	});
@@ -273,7 +341,7 @@ $(document).ready(function(){
 	var M1 = Morris.Donut({
 		element:'morris-1',
 		data:[{label:'Aplique un filtro para ver los datos',value:0}],
-		formatter: function (y, datos) { return y + '%' },
+		formatter: function (y, datos) { return parseFloat(y).toFixed(2) + '%' },
 		resize:true,
 		colors:colores,
 	});
@@ -307,27 +375,29 @@ $(document).ready(function(){
 	// Morris barras
 	var opcionesMorrisBarras = {
 		element: 'morris-barras',
-		data: [{'proveedor':'No hay datos', 'suma_anterior':0, 'suma_actual':0}],
+		//data: [{'proveedor':'No hay datos', 'suma_anterior':0, 'suma_actual':0}], 17022017 asunza
+		data: [{'proveedor':'No hay datos', 'suma_anterior':0, 'suma_actual':0,'variacion':0}],
 		xkey: 'proveedor',
-		ykeys: ['suma_anterior', 'suma_actual'],
-		labels: ['Anterior', 'Actual'],
-		barColors:[colores[1], colores[0]],
+		//ykeys: ['suma_anterior', 'suma_actual'], 17022017 asunza
+		ykeys: ['suma_anterior', 'suma_actual','variacion'],
+		//labels: ['Anterior', 'Actual'], 17022017 asunza
+		labels: ['Anterior', 'Actual','Variacion(%)'],
+		barColors:[colores[1], colores[0],colores[2]]
 	}
-	
 	window.MorrisBarras = Morris.Bar(opcionesMorrisBarras);
 	
 	// Morris comparativo (tercera pestaña)
 	var opcionesMorrisComparativo1 = {
 		element:'morris-comparacion-1',
 		data:[{label:'Seleccione un competidor para ver los datos',value:0}],
-		formatter: function (y, datos) { return y + ' u' },
+		formatter: function (y, datos) { return parseFloat(y).toFixed(2) + ' %' },
 		resize:true,
 		colors:colores,
 	}
 	var opcionesMorrisComparativo2 = {
 		element:'morris-comparacion-2',
 		data:[{label:'Seleccione un competidor para ver los datos',value:0}],
-		formatter: function (y, datos) { return y + ' u' },
+		formatter: function (y, datos) { return parseFloat(y).toFixed(2) + ' %' },
 		resize:true,
 		colors:colores,
 	}
@@ -338,9 +408,19 @@ $(document).ready(function(){
 	function totalesPorPeriodo(){
 		
 		// General
-		var filtro_sucursales_array = [];
-		$('[name="filtro_sucursales[]"]:checked').each(function(){
+			//20170315 asunza funciones multiselect-sucursales
+/*$(document).on('change click','.selectpicker',function(){
+	alert($('.selectpicker').val());
+})*/;
+		var filtro_sucursales_array = []; //funcion que ontiene las sucursales
+		/*$('[name="filtro_sucursales[]"]:checked').each(function(){
 			filtro_sucursales_array.push($(this).val());
+		});*/
+
+		
+		var trainindIdArray = $(".selectpicker").val();
+		$.each(trainindIdArray, function(index, value) { 
+			filtro_sucursales_array.push(value);
 		});
 		
 		var ms1 = $("#marketshare1").DataTable({
@@ -388,7 +468,7 @@ $(document).ready(function(){
 				$(datos.actual.morris).each(function(index, item){
 					var color = M2.options.colors[index];
 					$("#morris-2-leyenda ul").append(function(){
-						return $(document.createElement('li')).addClass('ellipsis').html('<span class="label label-default" style="display:inline-block; width:45px; text-align:right; margin-right:5px; background-color:'+color+'"> '+item.value+'%</span>'+item.label).on('click mouseover', function(){M2.select(index); preparaDonaMorris(); });
+						return $(document.createElement('li')).addClass('ellipsis').html('<span class="label label-default" style="display:inline-block; width:45px; text-align:right; margin-right:5px; background-color:'+color+'"> '+parseFloat(item.value).toFixed(2)+'%</span>'+item.label).on('click mouseover', function(){M2.select(index); preparaDonaMorris(); });
 					});
 				});
 				var m2fini = moment(datos.actual.fechas.desde).format('DD/MM/YYYY');
@@ -467,7 +547,7 @@ $(document).ready(function(){
 				$(datos.anterior.morris).each(function(index, item){
 					var color = M1.options.colors[index];
 					$("#morris-1-leyenda ul").append(function(){
-						return $(document.createElement('li')).addClass('ellipsis').html('<span class="label label-default" style="display:inline-block; width:45px; text-align:right; margin-right:5px; background-color:'+color+'"> '+item.value+'%</span>'+item.label).on('click mouseover', function(){M1.select(index); preparaDonaMorris(); });
+						return $(document.createElement('li')).addClass('ellipsis').html('<span class="label label-default" style="display:inline-block; width:45px; text-align:right; margin-right:5px; background-color:'+color+'"> '+parseFloat(item.value).toFixed(2)+'%</span>'+item.label).on('click mouseover', function(){M1.select(index); preparaDonaMorris(); });
 					});
 				});
 				var m1fini = moment(datos.anterior.fechas.desde).format('DD/MM/YYYY');
@@ -550,9 +630,9 @@ $(document).ready(function(){
 	}
 	
 	function histograma(){
-		
+		// 17022017 asunza se oculto por peticion del ingeniero medin.
 		// Gráficas: Regresa ambos periodos
-		$.ajax({
+		/*$.ajax({
 			type:'post',
 			url: constantes.URL + 'Dashboard/histogramaMorrisData',
 			success:function(datos){
@@ -567,7 +647,7 @@ $(document).ready(function(){
 					window.M4.setData(datos[2].data);
 				}
 			},
-		}).retry({times:3, timeout:1000, statusCodes:[500,503,504]});
+		}).retry({times:3, timeout:1000, statusCodes:[500,503,504]});*/
 		
 		// Tablas: Regresa ambos periodos
 		$.ajax({
@@ -586,9 +666,13 @@ $(document).ready(function(){
 						window.MorrisBarras.setData(datos);
 						
 						$("#morris-barras-leyenda").html('');
+						var j = 0; //01032017 asunza se agrego para evitar que escriba la variacion
 						window.MorrisBarras.options.labels.forEach(function(label, i){
+							if(j<2){//01032017 asunza se agrego para evitar que escriba la variacion
 							var legendItem = $('<span></span>').text(label).css('color', window.MorrisBarras.options.barColors[i]);
 							$("#morris-barras-leyenda").append(legendItem);
+							}//01032017 asunza se agrego para evitar que escriba la variacion
+							j++//01032017 asunza se agrego para evitar que escriba la variacion
 						});
 						
 				
@@ -612,7 +696,7 @@ $(document).ready(function(){
 
 	}
 	
-	// Comparativo: genera el Morris y el listado de productos
+	// Comparativo: genera el Morris y el listado de productos tabla debajo de las grficas de pastel
 	$("#comparativoDropdown1").on('change', function(){
 		
 		bitacora('Interacción','Cambio comparativo izquierdo');
@@ -632,7 +716,7 @@ $(document).ready(function(){
 				$(datos).each(function(index, item){
 					var color = window.MorrisComparativo1.options.colors[index];
 					$("#morris-comparacion-1-leyenda ul").append(function(){
-						return $(document.createElement('li')).addClass('ellipsis').html('<span class="label label-default" style="display:inline-block; width:45px; text-align:right; margin-right:5px; background-color:'+color+'"> '+item.value+'</span></span>'+'<span title="'+item.label+'" data-toggle="tooltip" data-placement="left" >'+item.label+'</span>').on('click mouseover', function(){window.MorrisComparativo1.select(index); preparaDonaMorris(); });
+						return $(document.createElement('li')).addClass('ellipsis').html('<span class="label label-default" style="display:inline-block; width:45px; text-align:right; margin-right:5px; background-color:'+color+'"> '+item.value+' % </span></span>'+'<span title="'+item.label+'" data-toggle="tooltip" data-placement="left" >'+item.label+'</span>').on('click mouseover', function(){window.MorrisComparativo1.select(index); preparaDonaMorris(); });
 					});
 				});
 			}
@@ -640,7 +724,7 @@ $(document).ready(function(){
 		var comparativoTabla1 = $("#comparativo-table-1").DataTable({
 			retrieve:true,
 			columns:[
-				{title:'Fecha'},
+				/*{title:'Fecha'},*/
 				{title:'Código de barras'},
 				{title:'Artículo'},
 				{title:'Presentación'},
@@ -681,7 +765,7 @@ $(document).ready(function(){
 				$(datos).each(function(index, item){
 					var color = window.MorrisComparativo2.options.colors[index];
 					$("#morris-comparacion-2-leyenda ul").append(function(){
-						return $(document.createElement('li')).addClass('ellipsis').html('<span class="label label-default" style="display:inline-block; width:45px; text-align:right; margin-right:5px; background-color:'+color+'"> '+item.value+'</span>'+'<span title="'+item.label+'" data-toggle="tooltip" data-placement="left" >'+item.label+'</span>').on('click mouseover', function(){window.MorrisComparativo2.select(index); preparaDonaMorris(); });
+						return $(document.createElement('li')).addClass('ellipsis').html('<span class="label label-default" style="display:inline-block; width:45px; text-align:right; margin-right:5px; background-color:'+color+'"> '+item.value+' % </span>'+'<span title="'+item.label+'" data-toggle="tooltip" data-placement="left" >'+item.label+'</span>').on('click mouseover', function(){window.MorrisComparativo2.select(index); preparaDonaMorris(); });
 					});
 				});
 				
@@ -690,7 +774,7 @@ $(document).ready(function(){
 		var comparativoTabla2 = $("#comparativo-table-2").DataTable({
 			retrieve:true,
 			columns:[
-				{title:'Fecha'},
+				/*{title:'Fecha'},*/
 				{title:'Código de barras'},
 				{title:'Artículo'},
 				{title:'Presentación'},
@@ -722,7 +806,6 @@ $(document).ready(function(){
 		$("#morris-comparacion-2-leyenda ul").html('').append('<li>Seleccione un competidor</li>');
 		
 		$(".comparativoDropdown select").html('').append('<option>&#x2248; Cargando. Espere...</option>').prop('disabled','disabled');
-		
 		$.ajax({
 			type:'post',
 			url: constantes.URL + 'Dashboard/comparativoDropdown',
@@ -779,24 +862,49 @@ $(document).ready(function(){
 			selector:'[data-toggle="tooltip"]',
 			container:'body',
 		});
+		
+
+	
+	
+	
+
+	if(constantes.codigo_pro > 0){
+		DisplayImgProveedor();
+	}
+
 			
 });
+
+
 // Termina on load
-//===============================
+//===============================	 
+ 
 
-// Acciones del filtro
 
-function obtenerSubfamilias(val) {
-	"use strict";
-	$.ajax({
-		method: "POST",
-		url: constantes.URL+"Dashboard/subfamiliasPorFamiliaPorProveedor/"+val,
-		success: function(data){
-			$("#codigo_sub").html(data);
-		}
-	}).retry({times:3, timeout:1000, statusCodes:[500,503,504]});
+function obtenerfamiliasDos(val) {
+	//"use strict";
+
+	if(val!=""){
+		$("#gui_btn_filtro").prop('disabled',true);
+			$.ajax({
+			method: "POST",
+			url: constantes.URL+"Dashboard/traeFamilia/"+val, 
+			success: function(data){
+			$('select#codigo_fam option').removeAttr("selected");
+			$("#codigo_fam option[value="+ data +"]").attr("selected",true);
+			$("#gui_btn_filtro").prop('disabled',false);
+			}
+		});
+	}else{
 	
+		$('select#codigo_fam option').removeAttr("selected");
+		$('select#codigo_sub option').removeAttr("selected");
+		$("#codigo_fam option[value='']").attr("selected",true);
+		$("#gui_btn_filtro").prop('disabled',false);
+		}
+		
 }
+
 
 // Monitor Filtro
 function monitorFiltro(){
@@ -832,21 +940,26 @@ function preparaDonaMorris(){
 
 	var isi = $("#morris-1 tspan:first").html();
 	$('#morris-1-etiquetas').text(isi);
+	$("#morris-1 svg").css({"width":"100%"});
 
 	$("#morris-2 tspan:first").css("display","none");
 	$("#morris-2 tspan:nth-child(1)").css({"font-size":"30px", "margin-top":"-20px"});
+	$("#morris-2 svg").css({"width":"100%"});
 
 	var isi = $("#morris-2 tspan:first").html();
 	$('#morris-2-etiquetas').text(isi);
 	
 	$("#morris-comparacion-1 tspan:first").css("display","none");
 	$("#morris-comparacion-1 tspan:nth-child(1)").css({"font-size":"30px", "margin-top":"-20px"});
+	$("#morris-comparacion-1 svg").css({"width":"100%"});
 
 	var isi = $("#morris-comparacion-1 tspan:first").html();
 	$('#morris-comparacion-1-etiquetas').text(isi);
 	
 	$("#morris-comparacion-2 tspan:first").css("display","none");
 	$("#morris-comparacion-2 tspan:nth-child(1)").css({"font-size":"30px", "margin-top":"-20px"});
+	$("#morris-comparacion-2 svg").css({"width":"100%"});
+	
 
 	var isi = $("#morris-comparacion-2 tspan:first").html();
 	$('#morris-comparacion-2-etiquetas').text(isi);
@@ -962,4 +1075,86 @@ var bitacora = function(tipo, accion){
 // Prueba
 function prueba(){
 	alert('Foo');
+}
+
+
+//20170314 asunza Multi-Select default
+$('.selectpicker').selectpicker({
+    selectAllText: 'Marcar todo',
+    deselectAllText: 'Desmarcar todo'
+});
+
+
+
+$('#mostrarP').hide();
+$("#mostrarP").click(function(){
+			$('div#panel_filtro.navbar-default.sidebar').css('display','block');
+			$('#page-wrapper.filtro').css('margin','0 0 0 250px');
+			$('#gui_btn_filtro').click();
+			$('#ocultarP').show();
+			$(this).hide();
+		 });
+		 
+	$("#ocultarP").click(function(){
+			$('div#panel_filtro.navbar-default.sidebar').css('display','none');
+			$('#page-wrapper.filtro').css('margin','0');
+			$('#gui_btn_filtro').click();
+			$('#mostrarP').show();
+			$(this).hide();
+		 });
+
+
+
+
+	//funcion que carga el texto del pie de pagina	
+	
+	//ACCIONES ASUNZA
+function DisplayImgProveedor(){
+	//alert('traer imagen');
+	var data = new FormData();
+		$.ajax({
+					url:constantes.URL+'Dashboard/traerImgPro/'+constantes.codigo_pro, 
+					type:'POST', 
+					contentType:false, 
+					data:data, 
+					processData:false, 
+					cache:false,
+					
+					}).done(function(msg){
+						
+						if(document.getElementById("prove")){
+	
+							if(msg != ''){
+								$("#img-prov").attr("src",constantes.URL+"/public/images/proveedores/"+msg);
+							}else{
+								$("#img-prov").attr("src","");
+								
+								}
+							}else{
+									if(msg != ''){
+									$("#img_prove").attr("src",constantes.URL+"/public/images/proveedores/"+msg);
+									$("#img-logo").css("margin-top","20px");
+									}else{
+										
+										$("#img_prove").css("visibility","hidden");
+										$("#img_prove").attr("src",constantes.URL+"/public/images/logo.png");
+										$("#img-logo").css("margin-top","15px");
+										//$('#img_prove').remove();
+										}
+								}
+						
+					});
+	}
+
+// Acciones del filtro
+function obtenerSubfamilias(val) {
+	"use strict";
+	$.ajax({
+		method: "POST",
+		url: constantes.URL+"Dashboard/subfamiliasPorFamiliaPorProveedor/"+val,
+		success: function(data){
+			$("#codigo_sub").html(data);
+		}
+	}).retry({times:3, timeout:1000, statusCodes:[500,503,504]});
+	
 }

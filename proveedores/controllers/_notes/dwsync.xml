@@ -19,10 +19,10 @@
 <file name="Sync.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131122977680000000" remote="131167007430000000" Dst="2" />
 <file name="User.bak.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131097401620000000" remote="131167007440000000" Dst="2" />
 <file name="User.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131149178560000000" remote="131167007440000000" Dst="2" />
-<file name="Index.php" server="ftp.surticoma.com/public_html/" local="131066817570000000" remote="131166972000000000" Dst="2" />
-<file name="Dashboard.bak.php" server="ftp.surticoma.com/public_html/" local="131105684050000000" remote="131166996600000000" Dst="2" />
-<file name="Dashboard.php" server="ftp.surticoma.com/public_html/" local="131149069570000000" remote="131166996600000000" Dst="2" />
-<file name="Sync.php" server="ftp.surticoma.com/public_html/" local="131188955178894420" remote="131188882800000000" Dst="2" />
-<file name="User.bak.php" server="ftp.surticoma.com/public_html/" local="131097401620000000" remote="131166996600000000" Dst="2" />
-<file name="User.php" server="ftp.surticoma.com/public_html/" local="131149178560000000" remote="131166996600000000" Dst="2" />
+<file name="Index.php" server="ftp.surticoma.com/public_html/" local="131336593200000000" remote="131336593200000000" Dst="1" />
+<file name="Dashboard.bak.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="Dashboard.php" server="ftp.surticoma.com/public_html/" local="131347844400000000" remote="131347844400000000" Dst="1" />
+<file name="Sync.php" server="ftp.surticoma.com/public_html/" local="131188248000000000" remote="131188248000000000" Dst="1" />
+<file name="User.bak.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="User.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

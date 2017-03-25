@@ -1,7 +1,8 @@
         	<footer style="margin-top:20px;">
             	<div class="well">
                     <p>Derechos reservados, &copy; 2015 - <?php echo date('Y'); ?>, Surticoma</p>
-                    <p><strong>¿Necesita ayuda?</strong> <i class="fa fa-phone"></i> (999) 911 8100 ext. 241 de lunes a viernes, de 9:00 a 17:00 y sábados de 9:00 a 14:00.</p>
+                    <p><strong>¿Necesita ayuda?</strong> <i class="fa fa-phone"></i> <span id="mensajePie"></span>
+                    <!--(999) 611 8100 ext. 241 de lunes a viernes, de 9:00 a 17:00 y sábados de 9:00 a 14:00.--></p>
                     <!-- Eddier Bacab 911 8100 x 241 9:00 a 17:00 l a v y 9:00 a 14:00 s -->
                 </div>
             </footer>
@@ -31,6 +32,9 @@
     
     <!-- Metis Menu Plugin JavaScript -->
     <script src="<?php echo BOWER; ?>bower_components/metisMenu/dist/metisMenu.min.js"></script>
+    
+    <!-- 20170314 asunza Multi-Select Plugin JavaScript -->
+    <script src="<?php echo BOWER; ?>bower_components/multiSelect/dist/js/bootstrap-select.min.js"></script>
    
     <!-- Moments Javascript -->
     <script type="text/javascript" src="//cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -70,6 +74,81 @@
 		'mespasadodesde': '<?php echo date('Y-m-01', strtotime($_SESSION['filtro']['fechaA_hasta'].' -1 month')); ?>',
 		'mespasadohasta': '<?php echo date('Y-m-t', strtotime($_SESSION['filtro']['fechaA_hasta'].' -1 month')); ?>',
 	}
+	
+
+
+	
+//funcion para subir la imagen 
+$(document).on("change","#archivos",function(){
+	var archivos = document.getElementById("archivos");//Damos el valor del input tipo file
+	var archivo = archivos.files; //Obtenemos el valor del input (los arcchivos) en modo de arreglo
+	texto = null;
+	//El objeto FormData nos permite crear un formulario pasandole clave/valor para poder enviarlo
+	
+	if(document.getElementById("prove")){
+		texto = document.getElementById("prove").value;
+		}
+		
+	if(texto != null){
+	 
+			var data = new FormData();
+			//Como no sabemos cuantos archivos subira el usuario, iteramos la variable y al 
+			//objeto de FormData con el metodo "append" le pasamos calve/valor, usamos el indice "i" para
+			//que no se repita, si no lo usamos solo tendra el valor de la ultima iteracion
+			
+			if(archivo.length > 0){
+					for(i=0; i<archivo.length; i++){
+						data.append('archivo'+i,archivo[i]);	
+					}
+					
+					data.append('texto',texto);
+					
+					$.ajax({
+						url:constantes.URL+"Dashboard/cambiaImgaProv", //Url a donde la enviaremos
+						type:'POST', //Metodo que usaremos
+						contentType:false, //Debe estar en false para que pase el objeto sin procesar
+						data:data, //Le pasamos el objeto que creamos con los archivos
+						processData:false, //Debe estar en false para que JQuery no procese los datos a enviar
+						cache:false //Para que el formulario no guarde cache
+					}).done(function(msg){
+						//$("#cargados").append(msg); //Mostrara los archivos cargados en el div con el id "Cargados"				
+						x = msg.split("-");
+						if(x[1] == 1){
+							//alert('todo bien');
+							$("#monitorFiltroProv").html('').append('<div class="alert alert-success"><strong>'+x[0]+'</strong></div>');
+					
+							$("#img-prov").attr("src",constantes.URL+"/public/images/proveedores/"+x[2]);
+							}else{
+								//alert('error');
+								$("#monitorFiltroProv").html('').append('<div class="alert alert-danger"><strong>'+x[0]+'</strong></div>');
+								}	
+					});
+			}else{
+						$("#monitorFiltroProv").html('').append('<div class="alert alert-danger"><strong>Por favor seleccione una iamgen.</strong></div>');
+				}
+	}else{
+		$("#monitorFiltroProv").html('').append('<div class="alert alert-danger"><strong>Para Cambiar la imagen elija un proveedor para editar</strong></div>');
+		}
+});
+
+
+var data = new FormData();
+		//data.append('correo',$("#usuario").val());
+		//alert('funcion traer pie de pagina');
+		$.ajax({
+				url:constantes.URL+'Dashboard/piepagina', 
+				type:'POST', 
+				contentType:false, 
+				data:data, 
+				processData:false, 
+				cache:false,
+				
+				}).done(function(msg){
+					$("#mensajePie").html(msg);
+			});
+
+
+	
     </script>
     
     <?php echo Xcrud::load_js() ?>

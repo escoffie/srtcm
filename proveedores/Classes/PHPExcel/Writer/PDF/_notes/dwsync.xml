@@ -12,8 +12,8 @@
 <file name="DomPDF.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167007300000000" Dst="2" />
 <file name="mPDF.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167007320000000" Dst="2" />
 <file name="tcPDF.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130382692260000000" remote="131167007320000000" Dst="2" />
-<file name="Core.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166964200000000" Dst="2" />
-<file name="mPDF.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166964800000000" Dst="2" />
-<file name="DomPDF.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166996000000000" Dst="2" />
-<file name="tcPDF.php" server="ftp.surticoma.com/public_html/" local="130382692260000000" remote="131166996000000000" Dst="2" />
+<file name="Core.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="mPDF.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="DomPDF.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="tcPDF.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

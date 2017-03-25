@@ -16,9 +16,9 @@
 <file name="MySQLiManager.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131149945160000000" remote="131167007520000000" Dst="2" />
 <file name="Session.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131031410880000000" remote="131167007530000000" Dst="2" />
 <file name="View.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131098809150000000" remote="131167007530000000" Dst="2" />
-<file name="Controller.php" server="ftp.surticoma.com/public_html/" local="131000607080000000" remote="131166996600000000" Dst="2" />
-<file name="Model.php" server="ftp.surticoma.com/public_html/" local="131001100520000000" remote="131166996600000000" Dst="2" />
-<file name="MySQLiManager.php" server="ftp.surticoma.com/public_html/" local="131182668200954556" remote="131182596000000000" Dst="2" />
-<file name="Session.php" server="ftp.surticoma.com/public_html/" local="131031410880000000" remote="131166996600000000" Dst="2" />
-<file name="View.php" server="ftp.surticoma.com/public_html/" local="131098809150000000" remote="131166996600000000" Dst="2" />
+<file name="Controller.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="Model.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="MySQLiManager.php" server="ftp.surticoma.com/public_html/" local="131182200000000000" remote="131182200000000000" Dst="1" />
+<file name="Session.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="View.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

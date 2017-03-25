@@ -21,14 +21,17 @@ include('./../xcrud/xcrud.php');
 
     <!-- MetisMenu CSS -->
     <link href="<?php echo BOWER; ?>bower_components/metisMenu/dist/metisMenu.min.css" rel="stylesheet">
+    
+    <!-- 20170314 asunza Multi-Select CSS -->
+    <link href="<?php echo BOWER; ?>bower_components/multiSelect/dist/css/bootstrap-select.min.css" rel="stylesheet">
+
 
     <!-- Timeline CSS -->
     <link href="<?php echo BOWER; ?>dist/css/timeline.css" rel="stylesheet">
 
-    <!-- DataTables CSS 
-    <link href="<?php echo BOWER; ?>bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">-->
-	<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/fc-3.2.2/sc-1.4.2/datatables.min.css"/>
- 
+     <!--DataTables CSS -->
+<!--    <link href="<?php echo BOWER; ?>bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.css" rel="stylesheet">-->
+<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs/dt-1.10.12/fc-3.2.2/sc-1.4.2/datatables.min.css"/>
     <!-- DataTables Responsive CSS -->
     <link href="<?php echo BOWER; ?>bower_components/datatables-responsive/css/dataTables.responsive.css" rel="stylesheet">
 
@@ -72,18 +75,19 @@ include('./../xcrud/xcrud.php');
     <div id="wrapper">
 
         <!-- Navigation -->
-        <nav class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
-            <div class="navbar-header">
+        <nav id="navbar-principal" class="navbar navbar-default navbar-fixed-top" role="navigation" style="margin-bottom: 0">
+            <div class="navbar-header">       
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Intercalar navegación</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="<?php echo URL; ?>Dashboard"><?php echo CL_NOMBRE; ?></a>
-            </div>
+                <!--<a class="navbar-brand" href="<php echo URL; ?>Dashboard"><php echo CL_NOMBRE; ?></a>-->
+                <a class="navbar-brand" href="<?php echo URL; ?>Dashboard"><img id="img-logo" src="<?php echo URL; ?>public/images/logo.png" alt="Logo"></a>
+            	</div>
             <!-- /.navbar-header -->
-
+            
   <!-- Super Admins -->
   <?php if($_SESSION['usuario']['codigo_pro']==0){ ?>
   <ul class="nav navbar-nav">
@@ -99,13 +103,18 @@ include('./../xcrud/xcrud.php');
     <li>
         <a href="<?php echo URL; ?>Dashboard/Proveedores/Surticoma"><i class="fa fa-user-secret fa-fw"></i> Usuarios</a>
     </li>
+    <li>
+        <a href="<?php echo URL; ?>Dashboard/Configura/"><i class="glyphicon glyphicon-wrench"></i> Configuraci&oacute;n</a>
+    </li>
   </ul> 
  <?php } ?>
-
-              <ul class="nav navbar-top-links navbar-right">
-
+ 			
+               <ul class="nav navbar-top-links navbar-right">                      
                 <li class="dropdown">
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" id="nombre_de_usuario">
+                     <?php if($_SESSION['usuario']['codigo_pro']>0){ ?>
+                 			<img src=""  id="img_prove" alt="Imagen Proveedor">
+            		<?php }?>
                         <i class="fa fa-user fa-fw"></i> <?php echo $_SESSION['usuario']['razonsocial_pro']; ?> <i class="fa fa-caret-down"> </i>
                     </a>
                     <ul class="dropdown-menu dropdown-user">
@@ -128,7 +137,8 @@ include('./../xcrud/xcrud.php');
             if(isset($submenu)){ 
                 $class_submenu = 'filtro';
 			?>
-            <div class="navbar-default sidebar" role="navigation">
+             
+            <div class="navbar-default sidebar" role="navigation" id="panel_filtro" style="margin-top:100px !important;">
                 <div class="sidebar-nav navbar-collapse">
                     <ul class="nav" id="side-menu">
                         <li class="sidebar-search">
@@ -145,4 +155,4 @@ include('./../xcrud/xcrud.php');
             ?>
         </nav>
 
-        <div id="page-wrapper" style="padding-top:30px;" class="<?php echo $class_submenu; ?>">
+        <div id="page-wrapper" style="padding-top:40px;" class="<?php echo $class_submenu; ?>">

@@ -30,14 +30,14 @@
 <file name="holder.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167011960000000" Dst="2" />
 <file name="package.json" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167011960000000" Dst="2" />
 <file name="README.md" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167011970000000" Dst="2" />
-<file name=".jshintrc" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966000000000" Dst="2" />
-<file name=".gitignore" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966000000000" Dst="2" />
-<file name="package.json" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966000000000" Dst="2" />
-<file name="README.md" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966000000000" Dst="2" />
-<file name=".bower.json" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167002000000000" Dst="2" />
-<file name=".gitattributes" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167002000000000" Dst="2" />
-<file name="bower.json" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167002000000000" Dst="2" />
-<file name="composer.json" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167002000000000" Dst="2" />
-<file name="gulpfile.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167002000000000" Dst="2" />
-<file name="holder.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167002000000000" Dst="2" />
+<file name=".jshintrc" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name=".gitignore" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="package.json" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="README.md" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name=".bower.json" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name=".gitattributes" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="bower.json" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="composer.json" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="gulpfile.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="holder.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

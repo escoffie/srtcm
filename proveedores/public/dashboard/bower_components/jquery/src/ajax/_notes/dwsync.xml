@@ -18,10 +18,10 @@
 <file name="parseXML.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167012130000000" Dst="2" />
 <file name="script.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167012140000000" Dst="2" />
 <file name="xhr.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167012170000000" Dst="2" />
-<file name="parseJSON.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966000000000" Dst="2" />
-<file name="parseXML.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966000000000" Dst="2" />
-<file name="xhr.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966000000000" Dst="2" />
-<file name="script.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966000000000" Dst="2" />
-<file name="jsonp.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167002600000000" Dst="2" />
-<file name="load.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167002600000000" Dst="2" />
+<file name="parseJSON.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="parseXML.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="xhr.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="script.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="jsonp.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="load.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

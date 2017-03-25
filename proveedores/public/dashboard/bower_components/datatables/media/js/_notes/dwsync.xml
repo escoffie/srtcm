@@ -27,13 +27,13 @@
 <file name="jquery.dataTables.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167008750000000" Dst="2" />
 <file name="jquery.dataTables.min.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167008760000000" Dst="2" />
 <file name="jquery.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167008760000000" Dst="2" />
-<file name="jquery.dataTables.min.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166964800000000" Dst="2" />
-<file name="dataTables.bootstrap.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166998400000000" Dst="2" />
-<file name="dataTables.bootstrap.min.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166998400000000" Dst="2" />
-<file name="dataTables.foundation.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166998400000000" Dst="2" />
-<file name="dataTables.foundation.min.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166998400000000" Dst="2" />
-<file name="dataTables.jqueryui.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166998400000000" Dst="2" />
-<file name="dataTables.jqueryui.min.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166998400000000" Dst="2" />
-<file name="jquery.dataTables.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166998400000000" Dst="2" />
-<file name="jquery.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166998400000000" Dst="2" />
+<file name="jquery.dataTables.min.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="dataTables.bootstrap.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="dataTables.bootstrap.min.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="dataTables.foundation.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="dataTables.foundation.min.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="dataTables.jqueryui.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="dataTables.jqueryui.min.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="jquery.dataTables.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="jquery.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

@@ -12,7 +12,7 @@
 <file name="class.phpmailer.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131030622120000000" remote="131167007600000000" Dst="2" />
 <file name="class.smtp.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131030622580000000" remote="131167007610000000" Dst="2" />
 <file name="PHPMailerAutoload.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131030621310000000" remote="131167007610000000" Dst="2" />
-<file name="class.smtp.php" server="ftp.surticoma.com/public_html/" local="131030622580000000" remote="131166971400000000" Dst="2" />
-<file name="PHPMailerAutoload.php" server="ftp.surticoma.com/public_html/" local="131030621310000000" remote="131166971400000000" Dst="2" />
-<file name="class.phpmailer.php" server="ftp.surticoma.com/public_html/" local="131030622120000000" remote="131166971400000000" Dst="2" />
+<file name="class.smtp.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="PHPMailerAutoload.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="class.phpmailer.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

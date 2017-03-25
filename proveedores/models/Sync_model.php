@@ -307,6 +307,7 @@ class Sync_model extends Model {
 		$mail->SMTPAuth = true;
 		$mail->Username = USUARIO;
 		$mail->Password = PASSWORD;
+		$mail->SMTPSecure = "";
 		if(PUERTOSALIDA==587){
 			//$mail->SMTPSecure = "tls";	
 		}
@@ -315,8 +316,7 @@ class Sync_model extends Model {
 		$mail->From = REMITENTE;
 		$mail->FromName = REMITENTENOMBRE;
 		$mail->addAddress("bernardoescoffie@gmail.com");
-		$mail->addAddress("asunza@coma.com.mx");
-		$mail->addAddress("darjona@coma.com.mx");
+		$mail->addAddress("reporte_crmproveedores@coma.com.mx");
 		$mail->isHTML(true);
 		$mail->Subject = "CRM Surticoma - Sincronización " . date('Y-m-d H:i:S');
 		$mail->Body = "$mensaje";

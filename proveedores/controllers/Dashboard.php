@@ -51,6 +51,11 @@ class Dashboard extends Controller {
 		
 	function subfamiliasPorFamiliaPorProveedor($codigo_fam) {
 		$filtroSubfamilias 	= $this->model->subfamiliasPorFamiliaPorProveedor($codigo_fam, $_SESSION['usuario']['codigo_pro']);
+		if($_SESSION['usuario']['codigo_pro']>0){
+		?>
+        <option value=""> Seleccione una</option>
+        <?php
+		}
 		foreach($filtroSubfamilias as $subfamilia){
 			if(isset($_SESSION['filtro']['codigo_sub']) and $subfamilia['codigo_sub'] == $_SESSION['filtro']['codigo_sub']){
 				$checked = 'selected';
@@ -71,7 +76,10 @@ class Dashboard extends Controller {
 		$_SESSION['usuario']['id_niv'] = $_POST['id_niv'];
 		
 		// Sucursales como cadena separada por comas para FIND_IN_SET en las consultas MySQL
-		$_SESSION['filtro']['where_sucursales'] = implode(',', $_POST['filtro_sucursales']);
+		$_SESSION['filtro']['where_sucursales'] = implode(',',$_POST['filtro_sucursales']);
+
+		//$_SESSION['filtro']['where_sucursales'] = $_POST['filtro_sucursales'];
+
 		
 		$fechasA = explode(' - ',$_POST['rangodefechas']);
 		
@@ -278,7 +286,7 @@ class Dashboard extends Controller {
 			$i++;
 		?>
         <div class="dataTable_wrapper col-md-6">
-            <table class="table table-striped table-bordered table-hover dataTable display nowrap" width="100%" id="hist-<?php echo $i; ?>">
+            <table class="table table-striped table-bordered table-hover dataTable display nowrap" width="100%" id="hist-<?php echo $i; ?>" align="center">
                 <thead class="header">
                     <tr>
                         <th>Día</th>
@@ -300,7 +308,7 @@ class Dashboard extends Controller {
 					if(sizeof($resultado)>0){
 						foreach($resultado['tfooter'] as $columna => $valor){
 							?>
-							<th><?php echo $this->model->moneda($valor); ?></th>
+							<td align="center"><b><?php echo $this->model->moneda($valor); ?></b></td>
 							<?php	
 						}
 					}
@@ -318,7 +326,7 @@ class Dashboard extends Controller {
                             <?php
                             foreach($celdas as $celda){
                                 ?>
-                                <td align="right"><?php echo $this->model->moneda($celda); ?></td>
+                                <td align="center"><?php echo $this->model->moneda($celda); ?></td>
                                 <?php	
                             }
                         ?>
@@ -366,6 +374,7 @@ class Dashboard extends Controller {
             	<?php
 				$suma_anterior = 0;
 				$suma_actual = 0;
+				$suma_porcen = 0; //17022017 ASUNZA SE AGREGO EL TOTAL DE LOS PORCENTAJES
 				$i=0;
 				foreach($arreglo as $fila){
 					$i++;
@@ -374,9 +383,9 @@ class Dashboard extends Controller {
 				?>
                 <tr>
             		<td><?php echo $fila['proveedor']; ?></td>
-            		<td align="right"><?php echo $this->model->moneda($fila['suma_anterior']); ?></td>
-            		<td align="right"><?php echo $this->model->moneda($fila['suma_actual']); ?></td>
-            		<td align="right"><?php
+            		<td align="center"><?php echo $this->model->moneda($fila['suma_anterior']); ?></td>
+            		<td align="center"><?php echo $this->model->moneda($fila['suma_actual']); ?></td>
+            		<td align="center"><?php
 					if($fila['suma_actual']>0 and $fila['suma_anterior']>0) 
 					$diferencia = ($fila['suma_anterior'] - $fila['suma_actual'])/$fila['suma_anterior']*-100;
 					else if($fila['suma_anterior']==0) $diferencia = 100;
@@ -384,16 +393,20 @@ class Dashboard extends Controller {
 					echo round($diferencia,2);
 					?> %</td>
             	</tr>
-                <?php
+                <?php	
 				}
+				if($suma_anterior>0 and $suma_actual>0) 
+				$suma_porcen = ($suma_anterior - $suma_actual) / $suma_anterior * -100;
+				else if($suma_anterior==0) $suma_porcen = 100;
+				else if($suma_actual==0) $suma_porcen = -100;
 				?>
             </tbody>
             <tfoot>
             	<tr>
-            		<th>Totales</th>
-            		<th align="right"><?php echo $this->model->moneda($suma_anterior); ?></th>
-            		<th align="right"><?php echo $this->model->moneda($suma_actual); ?></th>
-                    <th>&nbsp;</th>
+            		<td><b>Totales</b></td>
+            		<td align="center"><b><?php echo $this->model->moneda($suma_anterior); ?></b></td>
+            		<td align="center"><b><?php echo $this->model->moneda($suma_actual); ?></b></td>
+                    <td align="center"><b><?php echo round($suma_porcen,2); ?> %</b></td> <!-- 17022017 ASUNZA -->
             	</tr>
             </tfoot>
         </table>
@@ -418,7 +431,7 @@ class Dashboard extends Controller {
 		$i=0;
 		if(sizeof($elementos)>0){
 			?>
-            <option value="0">Seleccione de la lista</option>
+            <option value="0" selected>Seleccione de la lista</option>
             <?php
 			foreach($elementos as $elemento){ 
 				$selected='';
@@ -457,8 +470,8 @@ class Dashboard extends Controller {
             <ul class="list-inline">
                 <li><strong>Intervalo de fechas:</strong> <?php echo $resultado['fechas']; ?></li>
                 <li><strong>Sucursales:</strong> <?php echo $resultado['sucursales']; ?></li>
-                <li><strong>Familia:</strong> <?php echo $resultado['familia']; ?></li>
-                <li><strong>Subfamilia:</strong> <?php echo $resultado['subfamilia']; ?></li>
+                <?PHP if($_SESSION['usuario']['codigo_pro']<0){ ?><li><strong>Familia:</strong> <?php echo $resultado['familia']; ?></li><?php  }?>
+                <li><strong>Categoría:</strong> <?php echo $resultado['subfamilia']; ?></li>
             </ul>
         </div>
         <?php
@@ -614,6 +627,8 @@ class Dashboard extends Controller {
 		*/
 	}
 	
+	
+	
 	function proveedores($parametro=''){
 		if($_SESSION['usuario']['codigo_pro']!=0) die("No tiene acceso a esta sección");
 		$filtroSucursales 	= $this->model->sucursalesPorProveedor($_SESSION['usuario']['codigo_pro']);
@@ -669,6 +684,36 @@ class Dashboard extends Controller {
 
 	}
 	
+	//20170311 asunza se agrego la pantalla de configuracion
+	function configura($parametro=''){
+		if($_SESSION['usuario']['codigo_pro']!=0) die("No tiene acceso a esta sección");
+		$perfil				= $this->model->perfil($_SESSION['usuario']['codigo_pro']);
+
+		if( Session::exists() ) {
+			$data = array(
+				'perfil'=>$perfil,
+				'acciones'=>'Omitir',
+			);
+			
+			$this->view->render($this, 'configura', $data);
+				
+		} else {
+			$location = '';
+			if(!empty($_SERVER['REQUEST_URI'])) $location = "?r=".urlencode($_SERVER['REQUEST_URI']);
+			//header("Location: ".URL.$location."#acceder");
+			header("Location: ".URL);
+		}
+
+	}
+	
+	//20170311 asunza se creo la funcio para cargar el pie de pagina
+	function piepagina(){
+		
+		$mensaje = $cuenta = $this->model->mensajepie();
+		echo $mensaje;
+		}
+	
+	
 	function log($params='login,Inicio de sesión'){
 		$params = explode(',',$params);
 		$datos = array(
@@ -682,6 +727,64 @@ class Dashboard extends Controller {
 		//echo "<pre>";
 		//print_r($datos);
 		
+	}
+
+	
+	//20170311 asunza funcion subir imagen.
+	function cambiaImgaProv(){
+			$ruta="./public/images/proveedores/";
+			$texto=$_POST['texto'];
+			$respuesta = "";
+			foreach ($_FILES as $key) {
+				
+				if ($key["type"]!="image/jpeg" && $key["type"]!="image/png") {
+					$respuesta = "El archivo no tiene el formato adecuado.-2";	
+					}else{
+							if($key['error'] == UPLOAD_ERR_OK ){//Verificamos si se subio correctamente
+							if ($key["type"]=="image/jpeg"){
+								$nombre = $texto.'_perfil_img.jpg';//Obtenemos el nombre del archivo
+							 }
+							 if ($key["type"]=="image/png"){
+								$nombre = $texto.'_perfil_img.png';//Obtenemos el nombre del archivo
+							 }
+							$temporal = $key['tmp_name']; //Obtenemos el nombre del archivo temporal
+							$tamano= ($key['size'] / 1000)."Kb"; //Obtenemos el tamaño en KB
+							
+						if (file_exists($ruta.$nombre)){
+							    unlink($ruta.$nombre);									
+								move_uploaded_file($temporal, $ruta.$nombre); //Movemos el archivo temporal a la ruta especificada				
+								$cuenta = $this->model->updateImgProve($nombre,$texto);
+								$respuesta = "El archivo se ha sustituido-1-".$nombre;
+								
+							}else{
+								move_uploaded_file($temporal, $ruta.$nombre); //Movemos el archivo temporal a la ruta especificada		
+								$cuenta = $this->model->updateImgProve($nombre,$texto);
+								$respuesta = "imagen guardada con exito.-1-".$nombre;			
+								}
+								
+								
+							}else{
+								$respuesta =  $key['error']."-2"; //Si no se cargo mostramos el error
+							}
+						}		
+			}
+			
+			echo $respuesta;
+	}
+	
+	
+	//20170311 asunza funcion que carga la imagen de proveedor en el sistema
+	function traerImgPro($parametro){
+		$respuesta = $this->model->traerImagen($parametro);
+		echo $respuesta;
+		}
+		
+		
+
+//20170313 asunza funcion que busca la familia de la categoria(subfamilia) seleccionada
+function traeFamilia($codeSub){
+	$respuesta = $this->model->familiaSubfami($codeSub);
+	echo $respuesta;
 	}
 	
 	### AUXILIARES ###
@@ -697,5 +800,7 @@ class Dashboard extends Controller {
 			echo 0;	
 		}
 	}
-	
+		
 }
+
+

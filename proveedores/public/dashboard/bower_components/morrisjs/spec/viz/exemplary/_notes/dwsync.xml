@@ -12,8 +12,8 @@
 <file name="bar0.png" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013690000000" Dst="2" />
 <file name="line0.png" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013690000000" Dst="2" />
 <file name="stacked_bar0.png" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013700000000" Dst="2" />
-<file name="stacked_bar0.png" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="area0.png" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="bar0.png" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="line0.png" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
+<file name="stacked_bar0.png" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="area0.png" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="bar0.png" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="line0.png" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

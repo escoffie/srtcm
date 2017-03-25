@@ -33,15 +33,15 @@
 <file name="morris.min.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013410000000" Dst="2" />
 <file name="package.json" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013420000000" Dst="2" />
 <file name="README.md" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013420000000" Dst="2" />
-<file name=".bower.json" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="bower.travis.json" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="morris.css" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name=".gitignore" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name=".travis.yml" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="bower.json" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="Gruntfile.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="morris.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="morris.min.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="package.json" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="README.md" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
+<file name=".bower.json" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="bower.travis.json" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="morris.css" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name=".gitignore" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name=".travis.yml" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="bower.json" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="Gruntfile.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="morris.js" server="ftp.surticoma.com/public_html/" local="131332947600000000" remote="131332947600000000" Dst="1" />
+<file name="morris.min.js" server="ftp.surticoma.com/public_html/" local="131332942800000000" remote="131332942800000000" Dst="1" />
+<file name="package.json" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="README.md" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

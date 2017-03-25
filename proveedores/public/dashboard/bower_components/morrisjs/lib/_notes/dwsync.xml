@@ -21,11 +21,11 @@
 <file name="morris.grid.coffee" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013380000000" Dst="2" />
 <file name="morris.hover.coffee" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013380000000" Dst="2" />
 <file name="morris.line.coffee" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013390000000" Dst="2" />
-<file name="morris.donut.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="morris.hover.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="morris.grid.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="morris.line.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="morris.bar.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="morris.area.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="morris.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003200000000" Dst="2" />
+<file name="morris.donut.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="morris.hover.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="morris.grid.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="morris.line.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="morris.bar.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="morris.area.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="morris.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

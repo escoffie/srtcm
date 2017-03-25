@@ -9,7 +9,7 @@
 <file name="amdDev.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013870000000" Dst="2" />
 <file name="index.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013880000000" Dst="2" />
 <file name="require.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013890000000" Dst="2" />
-<file name="index.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="amdDev.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="require.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
+<file name="index.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="amdDev.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="require.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

@@ -1,5 +1,5 @@
-<?php require ('./public/php/Dashboard_header.php'); ?>
-<?php
+<?php require ('./public/php/Dashboard_header.php');
+
 $xcrud = Xcrud::get_instance();
 $xcrud->table('proveedores_pro');
 $xcrud->table_name('Proveedores');
@@ -19,6 +19,7 @@ $xcrud->label('estatus_pro','Estatus');
 $xcrud->label('duracion','Duración');
 $xcrud->label('fecha_pro','Fecha de alta');
 $xcrud->label('codigo_pro','Código interno');
+$xcrud->change_type('codigo_pro','int', '000', array('id'=>'prove'));
 $xcrud->label('rfc_pro','RFC');
 $xcrud->label('razonsocial_pro','Razón social');
 $xcrud->label('direccion_pro','Dirección');
@@ -35,8 +36,28 @@ $xcrud->change_type('fecha_pro','datetime');
 $xcrud->change_type('pw_pro', 'password', 'md5', array('placeholder'=>'Nueva contraseña'));
 $xcrud->validation_pattern('email_pro','email');
 $xcrud->relation('id_rol', 'roles_rol', 'id_rol', 'nombre_rol');
+//$xcrud->change_type('avatar_pro', 'file', '', array('not_rename'=>true));
 //$xcrud->relation('id_niv', 'niveles_niv', 'id_niv', 'descripcion_niv');
 
+//print_r($xcrud);
+?>
+<div class="row">
+    <div class="col-md-12" id="monitorFiltroProv"></div>
+</div>
+<div class="container container-form">
+ <img id="img-prov" src="" alt="Imagen Proveedor" height="180%" width="15%" style="display:none"><br>
+    <div class="row">
+        <div class="col-md-4">
+            <form method="post" id="subir_imagen" style="display:none">
+                <div class="form-group">
+                <input class="form-control" type="file" class="form-control" id = "archivos" name="archivos[]" multiple required>
+                </div>
+            </form>
+            <input type="hidden" id="Edit_Prove" value="">
+        </div>
+    </div>    
+</div>
+<?php
 //Sucursales
 $suc = $xcrud->nested_table('Sucursales', 'codigo_pro', 'empresa_sucursal_proveedor_esp', 'codigo_pro');
 $suc->table_name('Acceso a sucursales');
@@ -147,3 +168,64 @@ $logDetail->unset_csv();
 echo $xcrud->render();
 ?>
 <?php require './public/php/Dashboard_footer.php'; ?>
+<script>
+$(document).on("xcrudafterrequest",function(event,container){
+	
+    if(Xcrud.current_task == 'edit')
+    {
+        //Xcrud.show_message(container,'WOW!','success');
+		//alert($('#Edit_Prove').val());
+		$('div #subir_imagen').css("display","");
+		$('div #img-prov').css("display","");
+		DisplayImgProveedor();
+    }else{
+		$('div #subir_imagen').css("display","none");
+		$('div #img-prov').css("display","none");
+		}
+
+
+
+
+
+function DisplayImgProveedor(){
+	var data = new FormData();
+	
+		$.ajax({
+					url:'<?php echo URL; ?>Dashboard/traerImgPro/'+document.getElementById("prove").value, 
+					type:'POST', 
+					contentType:false, 
+					data:data, 
+					processData:false, 
+					cache:false,
+					
+					}).done(function(msg){
+						if(document.getElementById("prove")){
+							if(msg != ''){
+								$("#img-prov").attr("src","<?php echo URL; ?>/public/images/proveedores/"+msg);
+							}else{
+								$("#img-prov").attr("src","");
+								}
+							}else{
+									if(msg != ''){
+									$("#img_prove").attr("src","<?php echo URL; ?>/public/images/proveedores/"+msg);
+									}else{
+										$("#img_prove").attr("src","<?php echo URL; ?>/public/images/user.png");
+										$('#img_prove').remove();
+										//$('#img_prove').removeAttr("height");
+										//$('#img_prove').removeAttr("width");
+										}
+								}
+						
+					});
+	}
+
+
+
+	
+
+});
+
+
+
+
+</script>

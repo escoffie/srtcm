@@ -11,7 +11,7 @@
 <file name="email-body-01.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131087557900000000" remote="131167007460000000" Dst="2" />
 <file name="email-footer.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131037688220000000" remote="131167007470000000" Dst="2" />
 <file name="email-header.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131038635350000000" remote="131167007470000000" Dst="2" />
-<file name="email-body-01.php" server="ftp.surticoma.com/public_html/" local="131087557900000000" remote="131110937400000000" Dst="2" />
-<file name="email-header.php" server="ftp.surticoma.com/public_html/" local="131038635350000000" remote="131166964200000000" Dst="2" />
-<file name="email-footer.php" server="ftp.surticoma.com/public_html/" local="131037688220000000" remote="131166996600000000" Dst="2" />
+<file name="email-body-01.php" server="ftp.surticoma.com/public_html/" local="131110488000000000" remote="131110488000000000" Dst="1" />
+<file name="email-header.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="email-footer.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

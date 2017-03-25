@@ -12,8 +12,8 @@
 <file name="run.sh" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013780000000" Dst="2" />
 <file name="test.html" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013810000000" Dst="2" />
 <file name="visual_specs.js" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013810000000" Dst="2" />
-<file name="run.sh" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="examples.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="test.html" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="visual_specs.js" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
+<file name="run.sh" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="examples.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="test.html" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="visual_specs.js" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

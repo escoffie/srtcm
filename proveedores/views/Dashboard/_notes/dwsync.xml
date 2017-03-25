@@ -16,10 +16,11 @@
 <file name="proveedores.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131153518420000000" remote="131167014590000000" Dst="2" />
 <file name="sucursales.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131149905660000000" remote="131167014590000000" Dst="2" />
 <file name="usuarios.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131122148610000000" remote="131167014600000000" Dst="2" />
-<file name="index.php" server="ftp.surticoma.com/public_html/" local="131135873240000000" remote="131166967200000000" Dst="2" />
-<file name="perfil.php" server="ftp.surticoma.com/public_html/" local="131139418730000000" remote="131166967200000000" Dst="2" />
-<file name="proveedores.bak.php" server="ftp.surticoma.com/public_html/" local="131148959870000000" remote="131167004400000000" Dst="2" />
-<file name="proveedores.php" server="ftp.surticoma.com/public_html/" local="131153518420000000" remote="131167004400000000" Dst="2" />
-<file name="sucursales.php" server="ftp.surticoma.com/public_html/" local="131149905660000000" remote="131167004400000000" Dst="2" />
-<file name="usuarios.php" server="ftp.surticoma.com/public_html/" local="131122148610000000" remote="131167004400000000" Dst="2" />
+<file name="index.php" server="ftp.surticoma.com/public_html/" local="131346693600000000" remote="131346693600000000" Dst="1" />
+<file name="perfil.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="proveedores.bak.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="proveedores.php" server="ftp.surticoma.com/public_html/" local="131339972400000000" remote="131339972400000000" Dst="1" />
+<file name="sucursales.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="usuarios.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="configura.php" server="ftp.surticoma.com/public_html/" local="131337273600000000" remote="131337273600000000" Dst="1" />
 </dwsync>

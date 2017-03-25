@@ -9,7 +9,8 @@
 <file name=".htaccess" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131123838210000000" remote="131167005010000000" Dst="2" />
 <file name="config.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131148836630000000" remote="131167007390000000" Dst="2" />
 <file name="index.php" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="131119718640000000" remote="131167007500000000" Dst="2" />
-<file name="index.php" server="ftp.surticoma.com/public_html/" local="131119718640000000" remote="131166964200000000" Dst="2" />
-<file name="config.php" server="ftp.surticoma.com/public_html/" local="131188940767379620" remote="131188868400000000" Dst="2" />
+<file name="index.php" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="config.php" server="ftp.surticoma.com/public_html/" local="131347878000000000" remote="131347878000000000" Dst="1" />
 <file name=".htaccess" server="ftp.surticoma.com/public_html/" local="131123838210000000" remote="131166972000000000" Dst="2" />
+<file name="info.php" server="ftp.surticoma.com/public_html/" local="131182200000000000" remote="131182200000000000" Dst="1" />
 </dwsync>

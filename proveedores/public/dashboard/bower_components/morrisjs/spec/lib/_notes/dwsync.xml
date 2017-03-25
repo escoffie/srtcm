@@ -15,9 +15,9 @@
 <file name="label_series_spec.coffee" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013550000000" Dst="2" />
 <file name="pad_spec.coffee" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013580000000" Dst="2" />
 <file name="parse_time_spec.coffee" server="escoffie.com//var/www/escoffie.com/public_html/proveedores/" local="130932010300000000" remote="131167013590000000" Dst="2" />
-<file name="commas_spec.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131166966600000000" Dst="2" />
-<file name="hover_spec.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="label_series_spec.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="pad_spec.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
-<file name="parse_time_spec.coffee" server="ftp.surticoma.com/public_html/" local="130932010300000000" remote="131167003800000000" Dst="2" />
+<file name="commas_spec.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="hover_spec.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="label_series_spec.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="pad_spec.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
+<file name="parse_time_spec.coffee" server="ftp.surticoma.com/public_html/" local="131166648000000000" remote="131166648000000000" Dst="1" />
 </dwsync>

@@ -15,8 +15,8 @@
 								<div class="form-group"><input class="form-control" type="text" name="usuario" id="usuario" placeholder="Tu correo" required></div>
 								<div class="form-group"><input class="form-control" type="password" name="pw_pro" id="pw_pro" placeholder="Contraseña" required></div>
 								<div class="form-group"><input class="form-control btn btn-success" type="submit" id="signInSubmit" name="signInSubmit" value="Entrar"></div>
-								<!--<div id="signUpToggler">Regístrate</div>
-								<div id="recordarToggler">Recordar contraseña</div>-->
+								<!--<div id="signUpToggler">Regístrate</div>-->
+								<div id="recordarToggler"><p><a class="privacidad" href="<?php echo URL; ?>Index/recordar" target="_blank">Recordar contraseña<span class="fa fa-external-link"></span></a></p></div>
 							</form>
 						</div>
                     </div>
