@@ -1,0 +1,108 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*.visible {
+	display:none;	
+}*/
+
+.ui-autocomplete{position:absolute;top:100%;left:0;z-index:1000;float:left;display:none;min-width:160px;_width:160px;padding:4px 0;margin:2px 0 0 0;list-style:none;background-color:#ffffff;border-color:#ccc;border-color:rgba(0, 0, 0, 0.2);border-style:solid;border-width:1px;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;-webkit-box-shadow:0 5px 10px rgba(0, 0, 0, 0.2);-moz-box-shadow:0 5px 10px rgba(0, 0, 0, 0.2);box-shadow:0 5px 10px rgba(0, 0, 0, 0.2);-webkit-background-clip:padding-box;-moz-background-clip:padding;background-clip:padding-box;*border-right-width:2px;*border-bottom-width:2px}.ui-autocomplete .ui-menu-item > a.ui-corner-all{display:block;padding:3px 15px;clear:both;font-weight:normal;line-height:18px;color:#555555;white-space:nowrap}.ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-hover,.ui-autocomplete .ui-menu-item > a.ui-corner-all.ui-state-active{color:#ffffff;text-decoration:none;background-color:#0088cc;-webkit-border-radius:0px;-moz-border-radius:0px;border-radius:0px;background-image:none}
+
+/*
+https://github.com/sorich87/bootstrap-tour/issues/522
+*/
+.sidebar-tour-fix{
+	position:absolute !important;
+	z-index: initial !important;
+}
+
+a:focus {
+   outline: 0;
+}
+
+h2 {
+	border-bottom-style:none !important;	
+}
+
+table .collapse.in {
+	display:table-row;
+}
+
+table .clickable {
+	cursor:pointer;
+}
+
+.bootbox .modal-body {
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	max-width:80%;
+	display:inline-block;
+}
+
+li.ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+	max-width:100%;
+	display:block;
+	cursor:pointer;
+	margin:10px 0;
+}
+
+.vcenter {
+    display: inline-block;
+    vertical-align: middle;
+    float: none;
+}
+
+.legend-bar {
+}
+.legend-bar span {
+	display: inline-block;
+	padding: 15px 30px;
+	position: relative;
+}
+.legend-bar span:after {
+	padding-left: 4px;
+	content: '\00a0\00a0\00a0\00a0\00a0\00a0';
+text-decoration: line-through;
+}
+
+.morris-hover{
+}
+
+/*div.dataTables_wrapper {
+   margin: 0 auto;
+}*/
+div.dataTables_wrapper table {
+	min-width:100%;	
+}
+
+/* bootstrap hack: fix content width inside hidden tabs */
+.tab-content > .tab-pane:not(.active),
+.pill-content > .pill-pane:not(.active) {
+    display: block;
+    height: 0;
+    overflow-y: hidden;
+} 
+/* bootstrap hack end */
+
+.disabled {
+	color:#949494;
+	cursor:not-allowed !important;
+}
+.disabled a.fa {
+	color:#AF0002;
+	cursor:help;
+	text-decoration:none;	
+}
+
+/* BOOTBOX */
+div.bootbox.modal.fade.in {
+         z-index:1201;
+}
